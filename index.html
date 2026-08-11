@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
@@ -26,13 +27,7 @@ body{
     user-select:none;
 }
 
-
-/* =========================
-TELA DO JOGO
-========================= */
-
 #jogo{
-
     width:100vw;
     height:100vh;
 
@@ -48,321 +43,217 @@ TELA DO JOGO
     overflow:hidden;
 }
 
-
-/* =========================
-TÍTULO
-========================= */
-
 #titulo{
-
     position:absolute;
-
-    top:10px;
+    top:8px;
     left:0;
     width:100%;
-
     text-align:center;
-
-    font-size:28px;
+    font-size:27px;
     font-weight:bold;
-
     text-shadow:3px 3px 4px #000;
-
     z-index:10;
 }
 
+/* =========================
+PAINEL RPG
+========================= */
+
+#rpg{
+    position:absolute;
+    top:42px;
+    left:3%;
+    width:94%;
+    display:flex;
+    justify-content:space-between;
+    z-index:20;
+    font-weight:bold;
+}
+
+.rpgBox{
+    background:rgba(0,0,0,.75);
+    padding:7px 12px;
+    border-radius:10px;
+    border:1px solid #555;
+    font-size:14px;
+}
 
 /* =========================
 ARENA
 ========================= */
 
 #mesa{
-
     position:absolute;
-
     width:75%;
     height:28%;
-
     left:12.5%;
     top:38%;
-
     background:#176b35;
-
     border:8px solid #ddd;
-
     border-radius:5px;
-
-    box-shadow:
-    0 10px 20px #000;
-
+    box-shadow:0 10px 20px #000;
 }
-
 
 #rede{
-
     position:absolute;
-
     width:5px;
     height:100%;
-
     left:50%;
-
     top:0;
-
     background:white;
-
 }
 
-
 /* =========================
-JOGADOR
+PERSONAGENS
 ========================= */
 
 .personagem{
-
     position:absolute;
-
     text-align:center;
-
     font-size:55px;
-
     z-index:5;
-
 }
-
 
 #jogador{
-
     left:8%;
     bottom:20%;
-
 }
-
 
 #adversario{
-
     right:8%;
     top:20%;
-
 }
-
-
-/* =========================
-NOMES
-========================= */
 
 .nome{
-
     display:block;
-
     font-size:15px;
-
     background:#000;
-
     padding:5px 10px;
-
     border-radius:8px;
-
 }
 
-
 /* =========================
-BARRAS
+STATUS
 ========================= */
 
 .status{
-
     position:absolute;
-
     width:40%;
-
-    top:75px;
-
+    top:78px;
     padding:8px;
-
     background:#222;
-
     border-radius:10px;
-
+    z-index:15;
 }
-
 
 #statusJogador{
-
     left:3%;
-
 }
-
 
 #statusAdversario{
-
     right:3%;
-
 }
-
 
 .barra{
-
     height:14px;
-
     background:#555;
-
     border-radius:10px;
-
     overflow:hidden;
-
     margin-top:5px;
-
 }
-
 
 .vida{
-
     height:100%;
-
     background:#19d65a;
-
     width:100%;
-
 }
-
 
 .energia{
-
     height:100%;
-
     background:#2e9cff;
-
     width:100%;
-
 }
-
 
 /* =========================
 MENSAGEM
 ========================= */
 
 #mensagem{
-
     position:absolute;
-
     left:5%;
-
     width:90%;
-
     bottom:12%;
-
     text-align:center;
-
     font-size:18px;
-
     font-weight:bold;
-
     text-shadow:2px 2px 3px #000;
-
 }
-
 
 /* =========================
 BOTÕES
 ========================= */
 
 #controles{
-
     position:absolute;
-
     bottom:2%;
-
     left:0;
-
     width:100%;
-
     display:flex;
-
     justify-content:center;
-
     gap:8px;
-
 }
-
 
 button{
-
     border:0;
-
     border-radius:12px;
-
     padding:14px 10px;
-
     min-width:28%;
-
     background:#168f45;
-
     color:white;
-
     font-size:15px;
-
     font-weight:bold;
-
     box-shadow:0 4px 8px #000;
-
 }
-
 
 button:active{
-
     transform:scale(.94);
-
 }
 
+button:disabled{
+    opacity:.45;
+}
+
+/* =========================
+TELA FINAL
+========================= */
 
 #fim{
-
     display:none;
-
     position:absolute;
-
     inset:0;
-
-    background:rgba(0,0,0,.88);
-
+    background:rgba(0,0,0,.92);
     z-index:100;
-
     align-items:center;
-
     justify-content:center;
-
     flex-direction:column;
-
     text-align:center;
-
+    padding:20px;
 }
-
 
 #fim h2{
-
-    font-size:42px;
-
+    font-size:40px;
     margin:10px;
-
 }
-
 
 #fim p{
-
-    font-size:20px;
-
+    font-size:19px;
+    line-height:1.6;
 }
-
 
 #fim button{
-
-    width:70%;
-
-    margin-top:20px;
-
+    width:75%;
+    margin-top:15px;
 }
-
 
 /* =========================
 RESPONSIVO
@@ -371,11 +262,8 @@ RESPONSIVO
 @media(min-width:700px){
 
     #mesa{
-
         width:500px;
-
         left:calc(50% - 250px);
-
     }
 
 }
@@ -384,44 +272,56 @@ RESPONSIVO
 
 </head>
 
-
 <body>
-
 
 <div id="jogo">
 
-
 <div id="titulo">
-
 🏓 MESTRE DA MESA
+</div>
+
+<!-- =========================
+PAINEL RPG
+========================= -->
+
+<div id="rpg">
+
+```
+<div class="rpgBox">
+    🏓 Kelvin<br>
+    ⭐ Nível <span id="nivel">1</span>
+</div>
+
+<div class="rpgBox">
+    ⭐ XP: <span id="xp">0</span>/<span id="xpProximo">100</span><br>
+    🪙 <span id="moedas">0</span>
+</div>
+```
 
 </div>
 
-
-<!-- STATUS DO JOGADOR -->
+<!-- =========================
+STATUS JOGADOR
+========================= -->
 
 <div
 class="status"
 id="statusJogador">
 
-🏓 Você
+🏓 Kelvin
 
 <div class="barra">
-
 <div
 id="vidaJogador"
 class="vida">
 </div>
-
 </div>
 
 <div class="barra">
-
 <div
 id="energiaJogador"
 class="energia">
 </div>
-
 </div>
 
 ❤️ <span id="vidaTexto">100</span>
@@ -429,30 +329,30 @@ class="energia">
 
 </div>
 
-
-<!-- STATUS DO ADVERSÁRIO -->
+<!-- =========================
+STATUS ADVERSÁRIO
+========================= -->
 
 <div
 class="status"
 id="statusAdversario">
 
-⚽ Jogador de Futebol
+⚽ Sperandio
 
 <div class="barra">
-
 <div
 id="vidaAdversario"
 class="vida">
 </div>
-
 </div>
 
 ❤️ <span id="vidaAdvTexto">100</span>
 
 </div>
 
-
-<!-- MESA -->
+<!-- =========================
+MESA
+========================= -->
 
 <div id="mesa">
 
@@ -460,8 +360,9 @@ class="vida">
 
 </div>
 
-
-<!-- JOGADOR -->
+<!-- =========================
+JOGADOR
+========================= -->
 
 <div
 class="personagem"
@@ -470,15 +371,14 @@ id="jogador">
 🏓
 
 <span class="nome">
-
-Mestre da Mesa
-
+Kelvin
 </span>
 
 </div>
 
-
-<!-- ADVERSÁRIO -->
+<!-- =========================
+ADVERSÁRIO
+========================= -->
 
 <div
 class="personagem"
@@ -487,90 +387,77 @@ id="adversario">
 ⚽
 
 <span class="nome">
-
-Craque da Bola
-
+Sperandio
 </span>
 
 </div>
 
-
-<!-- MENSAGEM -->
+<!-- =========================
+MENSAGEM
+========================= -->
 
 <div id="mensagem">
 
-⚔️ O duelo começou!
+⚔️ Kelvin vs Sperandio! O duelo começou!
 
 </div>
 
-
-<!-- CONTROLES -->
+<!-- =========================
+CONTROLES
+========================= -->
 
 <div id="controles">
 
-<button onclick="atacar()">
+<button id="btnTopspin" onclick="atacar()">
 
 🏓<br>
-
 TOPSPIN
 
 </button>
 
-
-<button onclick="smash()">
+<button id="btnSmash" onclick="smash()">
 
 🔥<br>
-
 SMASH
 
 </button>
 
-
-<button onclick="defender()">
+<button id="btnDefender" onclick="defender()">
 
 🛡️<br>
-
 DEFENDER
 
 </button>
 
 </div>
 
-
-<!-- TELA FINAL -->
+<!-- =========================
+TELA FINAL
+========================= -->
 
 <div id="fim">
 
 <h2 id="tituloFim">
-
 🏆 VITÓRIA!
-
 </h2>
 
 <p id="textoFim">
-
 Você venceu!
-
 </p>
 
 <button onclick="location.reload()">
-
 🔄 Jogar novamente
-
 </button>
 
 </div>
 
-
 </div>
-
 
 <script>
 
-
-// =========================
-// ESTADO DO JOGO
-// =========================
+/* =========================
+ESTADO DO RPG
+========================= */
 
 let vidaJogador = 100;
 
@@ -581,9 +468,115 @@ let vidaAdversario = 100;
 let defendendo = false;
 
 
-// =========================
-// ATUALIZAR TELA
-// =========================
+/* =========================
+PROGRESSÃO
+========================= */
+
+let nivel =
+Number(localStorage.getItem("rpgNivel")) || 1;
+
+let xp =
+Number(localStorage.getItem("rpgXP")) || 0;
+
+let moedas =
+Number(localStorage.getItem("rpgMoedas")) || 0;
+
+
+let xpProximo =
+nivel * 100;
+
+
+/* =========================
+ATUALIZAR RPG
+========================= */
+
+function atualizarRPG(){
+
+    xpProximo = nivel * 100;
+
+    document.getElementById("nivel").innerText =
+        nivel;
+
+    document.getElementById("xp").innerText =
+        xp;
+
+    document.getElementById("xpProximo").innerText =
+        xpProximo;
+
+    document.getElementById("moedas").innerText =
+        moedas;
+
+}
+
+
+/* =========================
+GANHAR XP
+========================= */
+
+function ganharXP(valor){
+
+    xp += valor;
+
+    let subiuNivel = false;
+
+    while(xp >= xpProximo){
+
+        xp -= xpProximo;
+
+        nivel++;
+
+        xpProximo = nivel * 100;
+
+        subiuNivel = true;
+
+    }
+
+    localStorage.setItem(
+        "rpgNivel",
+        nivel
+    );
+
+    localStorage.setItem(
+        "rpgXP",
+        xp
+    );
+
+    if(subiuNivel){
+
+        mensagem(
+            "🎉 LEVEL UP! Kelvin chegou ao nível " +
+            nivel +
+            "!"
+        );
+
+    }
+
+    atualizarRPG();
+
+}
+
+
+/* =========================
+GANHAR MOEDAS
+========================= */
+
+function ganharMoedas(valor){
+
+    moedas += valor;
+
+    localStorage.setItem(
+        "rpgMoedas",
+        moedas
+    );
+
+    atualizarRPG();
+
+}
+
+
+/* =========================
+ATUALIZAR TELA
+========================= */
 
 function atualizar(){
 
@@ -625,9 +618,30 @@ function atualizar(){
 }
 
 
-// =========================
-// ATAQUE NORMAL
-// =========================
+/* =========================
+BLOQUEAR CONTROLES
+========================= */
+
+function bloquearControles(){
+
+    document.getElementById(
+        "btnTopspin"
+    ).disabled = true;
+
+    document.getElementById(
+        "btnSmash"
+    ).disabled = true;
+
+    document.getElementById(
+        "btnDefender"
+    ).disabled = true;
+
+}
+
+
+/* =========================
+ATAQUE NORMAL
+========================= */
 
 function atacar(){
 
@@ -636,13 +650,12 @@ function atacar(){
     if(energia < 10){
 
         mensagem(
-            "⚡ Você está sem energia!"
+            "⚡ Kelvin está sem energia!"
         );
 
         return;
 
     }
-
 
     energia -= 10;
 
@@ -656,7 +669,7 @@ function atacar(){
 
 
     mensagem(
-        "🏓 TOPSPIN! Você causou " +
+        "🏓 TOPSPIN! Kelvin causou " +
         dano +
         " de dano!"
     );
@@ -682,11 +695,13 @@ function atacar(){
 }
 
 
-// =========================
-// SMASH
-// =========================
+/* =========================
+SMASH
+========================= */
 
 function smash(){
+
+    if(vidaJogador <= 0) return;
 
     if(energia < 30){
 
@@ -712,7 +727,7 @@ function smash(){
 
 
     mensagem(
-        "🔥 SMASH DEVASTADOR! " +
+        "🔥 SMASH DEVASTADOR! Kelvin causou " +
         dano +
         " de dano!"
     );
@@ -738,11 +753,13 @@ function smash(){
 }
 
 
-// =========================
-// DEFENDER
-// =========================
+/* =========================
+DEFENDER
+========================= */
 
 function defender(){
+
+    if(vidaJogador <= 0) return;
 
     defendendo = true;
 
@@ -754,7 +771,7 @@ function defender(){
 
 
     mensagem(
-        "🛡️ Você entrou em posição defensiva!"
+        "🛡️ Kelvin entrou em posição defensiva!"
     );
 
 
@@ -769,9 +786,9 @@ function defender(){
 }
 
 
-// =========================
-// TURNO DO ADVERSÁRIO
-// =========================
+/* =========================
+TURNO ADVERSÁRIO
+========================= */
 
 function turnoAdversario(){
 
@@ -801,13 +818,13 @@ function turnoAdversario(){
         defendendo = false;
 
         mensagem(
-            "🛡️ Você defendeu o ataque!"
+            "🛡️ Kelvin defendeu o ataque de Sperandio!"
         );
 
     }else{
 
         mensagem(
-            "⚽ O jogador de futebol atacou!"
+            "⚽ Sperandio atacou!"
         );
 
     }
@@ -830,9 +847,9 @@ function turnoAdversario(){
 }
 
 
-// =========================
-// VERIFICAR FINAL
-// =========================
+/* =========================
+FINAL
+========================= */
 
 function verificarFim(){
 
@@ -841,6 +858,12 @@ function verificarFim(){
     ){
 
         vidaAdversario = 0;
+
+        bloquearControles();
+
+        ganharXP(100);
+
+        ganharMoedas(50);
 
         atualizar();
 
@@ -858,9 +881,15 @@ function verificarFim(){
 
         document.getElementById(
             "textoFim"
-        ).innerText =
-            "Você derrotou o jogador de futebol! ⚽🏓";
+        ).innerHTML =
 
+            "🔥 Kelvin derrotou Sperandio!<br><br>" +
+
+            "⭐ +100 XP<br>" +
+
+            "🪙 +50 moedas<br><br>" +
+
+            "O caminho para o Mundo dos Esportes começou!";
 
         return;
 
@@ -872,6 +901,8 @@ function verificarFim(){
     ){
 
         vidaJogador = 0;
+
+        bloquearControles();
 
         atualizar();
 
@@ -889,18 +920,20 @@ function verificarFim(){
 
         document.getElementById(
             "textoFim"
-        ).innerText =
-            "O Craque da Bola venceu desta vez.";
+        ).innerHTML =
 
+            "Sperandio venceu desta vez...<br><br>" +
+
+            "🏓 Não desista, Kelvin!";
 
     }
 
 }
 
 
-// =========================
-// MENSAGEM
-// =========================
+/* =========================
+MENSAGEM
+========================= */
 
 function mensagem(texto){
 
@@ -912,17 +945,16 @@ function mensagem(texto){
 }
 
 
-// =========================
-// INICIAR
-// =========================
+/* =========================
+INICIAR
+========================= */
 
 atualizar();
 
-</script>
+atualizarRPG();
 
+</script>
 
 </body>
 
 </html>
-
-
